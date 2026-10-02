@@ -1,1 +1,1412 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#2563EB"/><path d="M8 7h11c4 0 7 3 7 7s-3 7-7 7h-5v4H8V7Zm6 5v4h5c1 0 2-1 2-2s-1-2-2-2h-5Z" fill="#fff"/></svg>
+tạo logo (ko phải favcion ) cho 1 trang web như thế này: PIXELFORGE
+
+The only limit is your imagination
+Build a complete, polished, production-ready pixel creation web application called PixelForge.
+PixelForge is an all-in-one creative tool for:
+
+Pixel Art Studio
+Pixel Animation Studio
+Minecraft Skin Creator
+This is NOT a landing page, mockup, prototype, or visual concept.
+Build the actual working application from the beginning.
+
+
+1. CORE OBJECTIVE
+Create a professional browser-based creative application where users can:
+
+Draw pixel art.
+Create frame-by-frame pixel animations.
+Create and edit Minecraft skins.
+Preview Minecraft skins on a rotatable 3D character.
+Save and reopen projects.
+Import and export files.
+Work locally without an account.
+Work without an API key.
+Use the core features offline.
+Run the project directly by opening index.html.
+Deploy the same project to GitHub Pages and Vercel.
+Every core feature must actually work.
+Do not create fake functionality.
+
+
+2. ABSOLUTE RULES
+DO NOT:
+Create a landing page pretending to be an application.
+Create fake editors.
+Create fake canvas interactions.
+Create fake animation playback.
+Create fake 3D previews.
+Create fake file saving.
+Create fake importing.
+Create fake exporting.
+Create placeholder buttons.
+Create unfinished core features.
+Leave TODO comments for core functionality.
+Require an API key.
+Require a backend.
+Require user accounts.
+Require a database server.
+Require paid services.
+Require a cloud service for core functionality.
+Use eval().
+Use new Function().
+If a feature appears in the interface, it must work.
+If a technically difficult feature cannot be implemented reliably, simplify the feature rather than displaying a broken/fake version.
+
+
+3. RUNNING REQUIREMENT — VERY IMPORTANT
+The project MUST support direct local execution.
+The user should be able to:
+
+Download project
+↓
+Extract project
+↓
+Double-click index.html
+↓
+PixelForge opens
+Opening:
+
+index.html
+must launch the application without requiring:
+
+npm run dev
+or a local server.
+A development server may exist as an OPTIONAL development workflow, but it must NOT be required just to open the application.
+
+
+4. MULTI-FILE PROJECTS ARE ALLOWED
+Do NOT force the project into one HTML file.
+Multiple files are completely allowed and preferred when they improve:
+
+Code quality
+Maintainability
+Performance
+Organization
+Modularity
+Reliability
+You may use:
+
+HTML
+CSS
+JavaScript
+JSON
+SVG
+PNG
+WebP
+Fonts
+Web Manifest
+Service Worker
+Other necessary static assets
+Use as many files as genuinely necessary.
+Do NOT create unnecessary files.
+Every file must have a clear purpose.
+
+
+5. INDEX.HTML REQUIREMENT
+The project MUST contain:
+
+index.html
+as the main entry point.
+It should be easy for a normal user to find.
+Prefer a simple top-level structure such as:
+
+PixelForge/
+├── index.html
+├── assets/
+├── css/
+├── js/
+└── README.md
+The exact architecture may differ if necessary.
+
+
+6. LOCAL FILE COMPATIBILITY
+PixelForge should work when opened using:
+
+file:///
+as much as browser security allows.
+Do not assume an HTTP server is always available.
+Use graceful fallbacks for APIs that require a secure origin.
+For example:
+
+File System Access API
+Use it when available.
+Fallback:
+
+<input type="file">
+FileReader
+Blob
+Download
+PWA / Service Worker
+Treat this as an enhancement.
+Do not make the application fail when opened directly from file://.
+
+Storage
+Use IndexedDB when available.
+Provide reasonable fallback behavior if browser storage is unavailable.
+
+
+7. DEPLOYMENT REQUIREMENT
+The same project MUST be deployable to:
+
+GitHub Pages
+AND
+
+Vercel
+The production application must work correctly on both.
+It must not require a server runtime.
+
+
+8. GITHUB PAGES COMPATIBILITY
+Make sure:
+
+Asset paths work.
+CSS paths work.
+JavaScript paths work.
+Images work.
+Favicon works.
+Navigation works.
+Refreshing pages does not break the app.
+GitHub Pages subpaths are handled correctly.
+No unnecessary absolute / paths break deployment.
+If using Vite or another build system, configure the base path correctly.
+If routing would cause GitHub Pages problems, use hash routing or another reliable static-compatible approach.
+
+
+9. VERCEL COMPATIBILITY
+The project must support:
+
+npm install
+npm run dev
+npm run build
+when a build system is used.
+The production build must work on Vercel without a backend.
+Do not require environment variables for core features.
+
+
+10. TECHNOLOGY
+Use a lightweight modern architecture.
+Preferred:
+
+HTML5
+CSS3
+JavaScript ES Modules
+Canvas API
+IndexedDB
+LocalStorage
+Browser File APIs
+Pointer Events
+Web APIs
+React/Vite or another framework is allowed if it genuinely improves the application.
+Do not add unnecessary complexity.
+Do not use a massive UI framework when normal CSS is sufficient.
+
+
+11. DESIGN DIRECTION
+PixelForge must look:
+
+Elegant
+Premium
+Professional
+Modern
+Minimal
+Clean
+Sophisticated
+Technical
+Creative
+The interface should feel like professional creative software.
+It should NOT feel like:
+
+A generic SaaS dashboard
+An AI website
+A childish pixel game
+An overly retro website
+A crypto interface
+A neon gaming UI
+Pixel art should be present through the product's functionality, not excessive decoration.
+
+
+12. LIGHT THEME
+The default theme is a sophisticated:
+Blue + White
+palette.
+Use:
+
+Background:        #F8FAFC
+Surface:           #FFFFFF
+Secondary Surface: #F1F5F9
+
+Primary Blue:      #2563EB
+Blue Hover:        #1D4ED8
+Light Blue:        #3B82F6
+
+Main Text:         #0F172A
+Secondary Text:    #64748B
+
+Border:            #E2E8F0
+Blue should be the primary accent.
+White and light gray should dominate the interface.
+Do not make the entire UI blue.
+
+
+13. DARK THEME
+Dark mode must feel intentionally designed.
+Use:
+
+Background:        #0B0F14
+Surface:           #111827
+Secondary Surface: #17202D
+
+Primary Gold:      #F59E0B
+Orange:            #F97316
+Light Gold:        #FBBF24
+
+Main Text:         #F8FAFC
+Secondary Text:    #94A3B8
+
+Border:            #263244
+Dark mode identity:
+Black + Gold + Orange
+Use gold/orange as accents, not as the entire UI.
+
+
+14. THEME SYSTEM
+Provide:
+
+Light
+Dark
+System
+Save the selected theme locally.
+Theme switching must work immediately.
+
+
+15. TYPOGRAPHY
+Primary font:
+Inter
+Fallback:
+
+system-ui
+-apple-system
+BlinkMacSystemFont
+"Segoe UI"
+sans-serif
+Pixel fonts may be used sparingly for decorative details.
+Never use a pixel font throughout the entire application.
+
+
+16. BRANDING
+Application name:
+
+PixelForge
+Slogan:
+
+The only limit is your imagination
+Use the exact product name and slogan.
+Do not rename the product.
+
+
+17. LOGO
+Create a clean, sophisticated logo.
+Possible concept:
+
+Stylized pixelated P
+Pixel + forge/anvil concept
+Geometric pixel symbol
+Light mode:
+Blue / white.
+Dark mode:
+Gold / orange / dark.
+The logo must work at small sizes.
+Create:
+
+Navbar logo
+Homepage logo
+Favicon
+App icon
+
+
+18. GLOBAL APPLICATION SHELL
+Create a consistent application shell.
+Navbar should include:
+
+PixelForge logo
+Home
+Pixel Art
+Animation
+Skin Creator
+Theme switcher
+Settings
+The navbar should be:
+
+Clean
+Sticky
+Professional
+Subtle
+Responsive
+
+
+19. HOMEPAGE
+Create a premium homepage.
+Hero:
+
+PixelForge
+
+The only limit is your imagination
+
+Create pixel art.
+Animate your ideas.
+Build Minecraft skins.
+Buttons:
+Start Creating
+Open Project
+
+
+20. MAIN MODULE CARDS
+Create three large cards.
+
+Pixel Art Studio
+Create Pixel Art
+Create precise pixel artwork using a customizable grid.
+Button:
+Open Studio
+
+
+Pixel Animation
+Animate Your Pixels
+Create frame-by-frame pixel animations using a grid editor and timeline.
+Button:
+Open Animation
+
+
+Minecraft Skin Creator
+Design Your Skin
+Create Minecraft skins with a 64×64 pixel editor and interactive 3D character preview.
+Button:
+Open Skin Creator
+
+
+21. HOMEPAGE DESIGN
+Use:
+
+Spacious layout
+Clean cards
+Thin borders
+Soft shadows
+Subtle hover effects
+Professional typography
+Small blue accents
+Minimal pixel decoration
+Avoid excessive visual effects.
+
+
+22. RECENT PROJECTS
+Show real locally stored projects.
+Example:
+
+Recent Projects
+
+Pixel Character
+32×32
+Pixel Art
+
+Walk Animation
+32×32
+12 Frames
+
+My Skin
+64×64
+Minecraft Skin
+If there are no projects:
+
+No projects yet
+
+Start creating your first project.
+Clicking a project must actually open it.
+
+
+23. PIXEL ART STUDIO
+Create a complete professional pixel editor.
+The editor's main drawing area MUST be a real pixel grid.
+Every cell represents exactly one pixel.
+Example:
+
+□ □ □ □ □ □ □ □
+□ □ ■ ■ □ □ □ □
+□ ■ ■ ■ ■ □ □ □
+□ ■ ■ ■ ■ ■ □ □
+□ □ ■ ■ □ □ □ □
+The user edits individual cells.
+Do NOT use blurry freehand painting.
+
+
+24. PIXEL ART GRID SIZES
+Provide:
+
+16×16
+32×32
+64×64
+Allow custom dimensions if practical.
+When creating a new canvas, clearly display its dimensions.
+
+
+25. PIXEL GRID
+The grid must:
+
+Be perfectly square.
+Have clear cells.
+Remain crisp.
+Never blur.
+Use nearest-neighbor logic.
+Support high zoom.
+Support grid on/off.
+
+
+26. PIXEL ART TOOLS
+Implement real:
+
+Pencil
+Paint cells.
+
+Eraser
+Clear cells.
+
+Fill
+Flood-fill connected regions.
+
+Eyedropper
+Pick pixel colors.
+
+Line
+Draw pixel-perfect lines.
+
+Rectangle
+Draw pixel-perfect rectangles.
+
+Color Picker
+Select any color.
+
+Palette
+Store custom colors.
+
+Clear
+Clear canvas.
+
+
+27. SYMMETRY
+Implement:
+
+Horizontal symmetry
+Vertical symmetry
+Horizontal + vertical symmetry
+Symmetry must actually mirror drawing operations.
+
+
+28. SHADING TOOL
+Implement offline shading.
+Provide:
+
+Darken
+Lighten
+The tool should adjust the selected pixel colors.
+No AI service.
+No API.
+No cloud processing.
+
+
+29. DRAWING INPUT
+Support:
+
+Mouse
+Pointer Events
+Touch where practical
+Dragging across cells should produce continuous pixel strokes without gaps.
+Prevent accidental browser text selection while drawing.
+
+
+30. ZOOM
+Implement a crisp zoom system.
+Example levels:
+
+25%
+50%
+100%
+200%
+400%
+800%
+1600%
+At high zoom, each pixel must remain visually clear.
+
+
+31. GRID OPTIONS
+Provide:
+
+Show Grid
+Hide Grid
+Pixel outlines
+Transparent background
+Checkerboard background
+Center
+Fit to screen
+
+
+32. UNDO / REDO
+Implement real undo/redo.
+Minimum:
+30 history states
+Support:
+
+Ctrl + Z
+Ctrl + Y
+Ctrl + Shift + Z
+History must work correctly with:
+
+Pencil
+Eraser
+Fill
+Shapes
+Symmetry
+Shading
+
+
+33. IMPORT PNG
+Allow users to import PNG images.
+Convert imported images into actual editable pixel data.
+Do NOT simply place an image over the editor.
+Use appropriate nearest-neighbor pixel sampling.
+
+
+34. EXPORT PNG
+Export the actual pixel artwork.
+Do NOT include:
+
+UI
+Grid
+Guides
+Cursor
+Editor background
+Watermark
+Support transparency.
+
+
+35. PIXEL ANIMATION STUDIO
+Animation must also use a REAL PIXEL GRID.
+Each animation frame is an independent pixel-grid image.
+The editor should contain:
+
+Toolbar
+Canvas
+Properties
+Timeline
+
+
+36. ANIMATION FRAMES
+Implement:
+
+Add Frame
+Duplicate Frame
+Delete Frame
+Reorder Frame
+Select Frame
+Clear Frame
+Each frame must have completely independent pixel data.
+Changing Frame 1 must never accidentally change Frame 2.
+
+
+37. TIMELINE
+Create a professional bottom timeline.
+Each frame should display:
+
+Frame number
+Thumbnail
+Selection state
+Example:
+
+[01] [02] [03] [04] [05] [+]
+Timeline should support horizontal scrolling when necessary.
+
+
+38. ANIMATION PLAYBACK
+Implement real playback.
+Controls:
+
+Play
+Pause
+Stop
+Restart
+Loop
+FPS:
+1–30 FPS
+The animation must play using actual frame data.
+Do NOT simulate playback with CSS.
+
+
+39. ONION SKIN
+Implement:
+Onion Skin
+Show the previous frame behind the current frame.
+Provide:
+
+Enable/Disable
+Opacity
+The onion skin should be subtle.
+
+
+40. ANIMATION EXPORT
+Implement:
+
+GIF
+Generate the animated GIF entirely in the browser.
+Use a lightweight client-side GIF encoder if necessary.
+No backend.
+No API.
+
+Sprite Sheet
+Export all frames into a PNG.
+Support:
+
+Horizontal
+Vertical
+Grid
+The exported sprite sheet must not contain editor UI.
+
+
+41. MINECRAFT SKIN CREATOR
+Create a specialized Minecraft skin editor.
+It must contain TWO synchronized systems:
+
+A. 64×64 pixel editor
+B. Interactive 3D Minecraft-style character preview
+
+
+42. SKIN EDITOR
+The editor MUST be a real:
+64×64 pixel grid
+Each cell represents one texture pixel.
+Provide:
+
+Pencil
+Eraser
+Fill
+Eyedropper
+Color Picker
+Palette
+Symmetry
+Undo
+Redo
+Zoom
+Grid toggle
+
+
+43. MINECRAFT SKIN TEMPLATE
+Use the standard Minecraft 64×64 skin texture layout.
+Clearly identify:
+
+Head
+Body
+Left Arm
+Right Arm
+Left Leg
+Right Leg
+Overlay areas
+Guides must never appear in the exported skin.
+
+
+44. 3D CHARACTER PREVIEW — CORE FEATURE
+Create an actual interactive 3D character.
+The character should consist of:
+
+Head
+Body
+Left Arm
+Right Arm
+Left Leg
+Right Leg
+Use the user's CURRENT skin texture.
+When a pixel is edited:
+The 3D character must update automatically.
+Do not use a static image.
+
+
+45. 360° ROTATION — CORE FEATURE
+The user must be able to rotate the character around the vertical axis.
+Support:
+
+Mouse drag
+Touch drag where practical
+Mouse wheel zoom
+The user must be able to inspect:
+
+Front
+Left side
+Back
+Right side
+Any angle between them
+The preview must support a complete:
+360° rotation
+
+
+46. 3D TEXTURE QUALITY
+Minecraft skin textures must remain pixel-perfect.
+Use:
+Nearest-neighbor texture filtering
+Do NOT blur the texture.
+The preview must update efficiently when pixels change.
+
+
+47. 3D PREVIEW CONTROLS
+Provide:
+
+Front View
+Back View
+Reset Rotation
+Zoom
+Rotate
+Optional:
+
+Idle animation
+Walking animation
+Only include optional features if they work reliably.
+
+
+48. MINECRAFT SKIN IMPORT
+Allow:
+Import Skin PNG
+Validate:
+
+PNG
+64×64
+Load it into the actual pixel editor.
+The 3D character preview must immediately use the imported texture.
+
+
+49. MINECRAFT SKIN EXPORT
+Export:
+64×64 PNG
+The exported file must contain ONLY the skin.
+No:
+
+Grid
+Guides
+UI
+Background
+Watermark
+3D preview
+
+
+50. HTD PROJECT FORMAT
+PixelForge's native project format is:
+.htd
+It is a JSON-based project format.
+Example:
+
+{
+  "format": "PixelForge",
+  "version": 1,
+  "type": "pixel-art",
+  "name": "My Project",
+  "width": 32,
+  "height": 32,
+  "fps": 8,
+  "frames": []
+}
+The actual pixel representation may be optimized for storage.
+
+
+51. HTD PROJECT TYPES
+Support:
+
+pixel-art
+animation
+Minecraft skins may optionally be stored as HTD projects, but:
+PNG remains the standard skin export format.
+
+
+52. HTD OPERATIONS
+Implement:
+
+New Project
+Open .htd
+Save .htd
+Save As
+Rename
+Duplicate
+Delete
+Use browser APIs such as:
+
+Blob
+File
+FileReader
+IndexedDB
+File System Access API when available
+Provide fallback upload/download behavior.
+
+
+53. HTD SECURITY
+Never execute HTD contents.
+When opening a project:
+
+Parse JSON.
+Validate format.
+Validate version.
+Validate type.
+Validate dimensions.
+Validate frame data.
+Validate colors.
+Reject malformed files safely.
+Never use project contents as executable code.
+
+
+54. LOCAL STORAGE
+Use:
+IndexedDB
+for project data.
+Use:
+LocalStorage
+for lightweight preferences.
+Store:
+
+Recent projects
+Theme
+Settings
+Palettes
+Editor preferences
+Do not store large animation data inefficiently in LocalStorage.
+
+
+55. PROJECT MANAGER
+Implement:
+
+New
+Open
+Save
+Save As
+Rename
+Duplicate
+Delete
+Confirm before deleting important projects.
+
+
+56. KEYBOARD SHORTCUTS
+Implement:
+
+Ctrl + Z       Undo
+Ctrl + Y       Redo
+Ctrl + S       Save
+Ctrl + O       Open
+B              Pencil
+E              Eraser
+G              Fill
+I              Eyedropper
+Avoid shortcuts that cause severe browser conflicts.
+Show shortcuts in tooltips/help.
+
+
+57. EDITOR TOOLBAR
+Use professional compact controls.
+Example:
+
+[Pencil]
+[Eraser]
+[Fill]
+[Eyedropper]
+[Line]
+[Rectangle]
+
+[Color]
+
+[Undo]
+[Redo]
+
+[Grid]
+[Zoom]
+Use consistent icons.
+Avoid giant colorful buttons.
+
+
+58. ICON SYSTEM
+Use one consistent icon system.
+Lucide Icons or another lightweight icon system is acceptable.
+Every icon-only button must have:
+
+Tooltip
+Accessible label
+Do not mix unrelated icon styles.
+
+
+59. SETTINGS
+Create a settings panel.
+
+Appearance
+Light
+Dark
+System
+Editor
+Default grid size
+Show grid
+Pixel outlines
+Onion skin
+Storage
+Clear recent projects
+Clear local data
+Destructive actions require confirmation.
+
+
+60. TOAST NOTIFICATIONS
+Implement a professional toast system.
+Examples:
+
+Project saved successfully.
+PNG exported successfully.
+Frame duplicated.
+Skin imported successfully.
+Project opened successfully.
+Errors:
+
+Unable to open this project.
+Invalid Minecraft skin.
+Unsupported file format.
+Export failed.
+Do not overuse notifications.
+
+
+61. ERROR HANDLING
+The application must handle gracefully:
+
+Invalid HTD files
+Corrupted HTD files
+Invalid PNG files
+Unsupported files
+Storage errors
+File reading errors
+Export errors
+Never expose raw technical stack traces to normal users.
+
+
+62. RESPONSIVE DESIGN
+Desktop is the primary experience.
+Tablet:
+
+Compact toolbar
+Responsive side panels
+Scrollable timeline
+Mobile:
+
+Collapsible tool panels
+Touch-friendly controls
+Horizontal timeline
+Bottom toolbar/drawer where appropriate
+Never allow:
+
+Overlapping text
+Broken layouts
+Unusable buttons
+Unintentional horizontal page overflow
+
+
+63. ACCESSIBILITY
+Implement:
+
+Keyboard navigation
+Visible focus states
+Proper labels
+ARIA labels where appropriate
+Good contrast
+Accessible icon buttons
+
+
+64. ANIMATIONS
+Use subtle professional micro-interactions:
+
+Hover
+Focus
+Modal transitions
+Toast transitions
+Panel transitions
+Card hover
+Theme transition
+Do NOT over-animate the application.
+Respect:
+
+prefers-reduced-motion
+
+
+65. PWA / OFFLINE
+If practical, implement:
+
+Web App Manifest
+Service Worker
+Offline caching
+However, PWA functionality must never prevent:
+
+Double-click index.html
+from launching the application.
+Core creative tools must not require an online API.
+
+
+66. DEPENDENCY RULES
+Keep dependencies minimal.
+Allowed when genuinely necessary:
+
+Three.js for the 3D character
+Lightweight GIF encoder
+Lightweight icon library
+Do not rely on external CDN resources for critical application functionality.
+Bundle required dependencies appropriately.
+Do not introduce dependencies merely for decoration.
+
+
+67. PERFORMANCE
+Optimize:
+
+Grid rendering
+Pointer drawing
+Flood fill
+Undo/redo
+Timeline thumbnails
+Animation playback
+GIF generation
+Sprite sheet generation
+3D preview updates
+Do not unnecessarily rerender the entire application when a single pixel changes.
+The application should remain responsive.
+
+
+68. FILE STRUCTURE
+A modular structure is strongly preferred.
+Example:
+
+PixelForge/
+│
+├── index.html
+├── package.json
+├── vite.config.js
+├── README.md
+│
+├── assets/
+│   ├── logo.svg
+│   ├── favicon.svg
+│   └── icons/
+│
+├── css/
+│   ├── global.css
+│   ├── theme.css
+│   ├── home.css
+│   ├── editor.css
+│   ├── animation.css
+│   └── skin.css
+│
+├── js/
+│   ├── main.js
+│   │
+│   ├── core/
+│   │   ├── pixel-engine.js
+│   │   ├── grid-renderer.js
+│   │   ├── history.js
+│   │   ├── project-format.js
+│   │   ├── storage.js
+│   │   └── export.js
+│   │
+│   ├── editors/
+│   │   ├── pixel-editor.js
+│   │   ├── animation-editor.js
+│   │   └── skin-editor.js
+│   │
+│   ├── three/
+│   │   ├── character.js
+│   │   ├── skin-texture.js
+│   │   └── camera.js
+│   │
+│   ├── components/
+│   │   ├── navbar.js
+│   │   ├── toolbar.js
+│   │   ├── palette.js
+│   │   ├── color-picker.js
+│   │   ├── timeline.js
+│   │   ├── modal.js
+│   │   └── toast.js
+│   │
+│   └── pages/
+│       ├── home.js
+│       ├── pixel-art.js
+│       ├── animation.js
+│       └── skin.js
+│
+└── README.md
+This is an example, not a strict requirement.
+Adapt it to the chosen architecture.
+The final architecture must remain clean and understandable.
+
+
+69. CODE QUALITY
+Write maintainable code.
+Use:
+
+Clear variable names
+Modular functions
+Reusable components
+Comments for complicated algorithms
+Defensive error handling
+Do not write unnecessarily huge functions.
+Do not duplicate the same pixel engine three times.
+The Pixel Art, Animation and Skin editors should reuse common pixel-editing logic where appropriate.
+
+
+70. IMPORTANT ARCHITECTURE PRINCIPLE
+Create a reusable Pixel Engine.
+It should handle things such as:
+
+Pixel data
+Grid interaction
+Painting
+Erasing
+Fill
+Eyedropper
+Symmetry
+Zoom
+Undo/Redo
+Import/export
+Then build:
+
+Pixel Art Studio
+        ↓
+Pixel Engine
+
+Pixel Animation
+        ↓
+Pixel Engine + Timeline
+
+Minecraft Skin Creator
+        ↓
+Pixel Engine + Skin Mapping + 3D Preview
+This prevents duplicated logic and makes the project easier to maintain.
+
+
+71. NO UNNECESSARY BACKEND
+PixelForge should be fundamentally local-first.
+Do not create:
+
+Login
+Register
+Cloud account
+User database
+Server API
+unless explicitly required later.
+The core application must function without them.
+
+
+72. SECURITY
+Never execute user project data.
+Validate:
+
+File type
+File size where appropriate
+Dimensions
+JSON structure
+Color values
+Frame count
+Avoid unsafe HTML injection.
+Do not use:
+
+eval()
+new Function()
+
+
+73. README
+Create a complete README.
+Include:
+
+PixelForge
+The only limit is your imagination
+
+Features
+
+Technology
+
+Project Structure
+
+How to Run
+
+How to Run by Double-Clicking index.html
+
+Development
+
+Production Build
+
+GitHub Pages Deployment
+
+Vercel Deployment
+
+HTD Format
+
+Offline Support
+
+Browser Support
+Clearly explain that:
+The project can be launched by opening index.html.
+Also explain the optional development workflow if a build system is used.
+
+
+74. TESTING — REQUIRED
+Before declaring the project complete, test every workflow.
+
+Homepage
+Navigation works.
+Cards work.
+Theme switch works.
+Recent projects work.
+Pixel Art
+Create 16×16.
+Create 32×32.
+Create 64×64.
+Draw.
+Erase.
+Fill.
+Eyedropper.
+Line.
+Rectangle.
+Symmetry.
+Shading.
+Undo.
+Redo.
+Zoom.
+Grid.
+Import PNG.
+Export PNG.
+Save HTD.
+Open HTD.
+Animation
+Create frames.
+Draw on each frame.
+Duplicate.
+Delete.
+Reorder.
+Play.
+Pause.
+Stop.
+Loop.
+Change FPS.
+Onion Skin.
+Export GIF.
+Export Sprite Sheet.
+Save HTD.
+Reopen HTD.
+Minecraft Skin
+Open 64×64 editor.
+Edit pixels.
+Import 64×64 skin.
+3D preview updates.
+Rotate 360°.
+Front view.
+Back view.
+Zoom.
+Reset rotation.
+Export clean 64×64 PNG.
+Storage
+Save project.
+Reload application.
+Project remains available.
+Open project.
+Continue editing.
+Local Launch
+Close the development server.
+Double-click:
+
+index.html
+Verify that the application launches.
+
+Deployment
+Test production build on:
+
+GitHub Pages
+Vercel
+
+
+75. FINAL ACCEPTANCE CRITERIA
+The project is complete ONLY when all of the following are true:
+
+DESIGN
+Premium
+Elegant
+Professional
+Modern
+Blue/white light mode
+Black/gold/orange dark mode
+Responsive
+Consistent
+FUNCTIONALITY
+Real pixel grid
+Real drawing
+Real animation timeline
+Real playback
+Real GIF export
+Real sprite sheet export
+Real Minecraft skin editor
+Real 3D preview
+Real 360° rotation
+Real-time skin texture updates
+Real PNG import/export
+Real HTD save/load
+Real local project storage
+ARCHITECTURE
+Modular
+Maintainable
+No unnecessary backend
+No API key
+No fake features
+No unsafe code
+RUNNING
+Double-click index.html works
+Development mode works if included
+Production build works
+DEPLOYMENT
+GitHub Pages compatible
+Vercel compatible
+
+
+76. FINAL INSTRUCTION TO THE AI BUILDER
+Do NOT stop after creating the homepage.
+Do NOT create only the visual design.
+Do NOT create a prototype.
+Do NOT leave core functionality unfinished.
+Build the entire application.
+When generating the project:
+
+Create all required files.
+Implement all core functionality.
+Connect all UI elements to real functionality.
+Test the workflows.
+Fix runtime errors.
+Fix broken imports.
+Fix broken asset paths.
+Fix responsive issues.
+Verify local index.html execution.
+Verify production build.
+Verify GitHub Pages compatibility.
+Verify Vercel compatibility.
+The final result must feel like a real professional pixel creation application, not an AI-generated demo.
+
+
+PRODUCT IDENTITY
+Name:
+PixelForge
+Slogan:
+The only limit is your imagination
+Light Theme:
+Blue + White
+Dark Theme:
+Black + Gold + Orange
+Core Tools:
+Pixel Art Studio + Pixel Animation + Minecraft Skin Creator
+Native Project Format:
+.htd
+Main Entry Point:
+index.html
+Local Launch:
+Double-click index.html
+Deployment:
+GitHub Pages + Vercel
+Core Principle:
+
+Create. Edit. Save. Export.
+Build PixelForge completely from the beginning.
+Bắt đầu tạo hình ảnh
