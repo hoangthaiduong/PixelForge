@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2563EB">
+  <meta name="description" content="PixelForge — pixel art, animation and Minecraft skin creation, locally in your browser.">
+  <title>PixelForge — The only limit is your imagination</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/editor.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand" data-view="home" tabindex="0" role="button" aria-label="PixelForge home">
+      <img src="assets/logo.svg" alt="" class="brand-mark">
+      <div class="brand-copy"><strong>PixelForge</strong><span>The only limit is your imagination</span></div>
+    </div>
+    <nav class="nav" aria-label="Primary navigation">
+      <button class="nav-btn is-active" data-view="home">Home</button>
+      <button class="nav-btn" data-view="pixel">Pixel Art</button>
+      <button class="nav-btn" data-view="animation">Animation</button>
+      <button class="nav-btn" data-view="skin">Skin Creator</button>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-btn" id="themeBtn" title="Theme" aria-label="Theme"><span id="themeIcon">◐</span></button>
+      <button class="icon-btn" id="settingsBtn" title="Settings" aria-label="Settings">⚙</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="view-home" class="view is-visible">
+      <div class="hero wrap">
+        <div class="hero-copy">
+          <div class="eyebrow">LOCAL-FIRST CREATIVE TOOL</div>
+          <h1>PixelForge</h1>
+          <p class="hero-tagline">The only limit is your imagination</p>
+          <p class="hero-text">Create precise pixel art, animate frame by frame, and build Minecraft skins in one focused workspace.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="startCreating">Start Creating</button>
+            <button class="secondary-btn" id="openProjectHome">Open Project</button>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-grid" id="heroGrid"></div>
+          <div class="hero-spark spark-a"></div><div class="hero-spark spark-b"></div><div class="hero-spark spark-c"></div>
+        </div>
+      </div>
+
+      <div class="wrap section">
+        <div class="section-head"><div><div class="eyebrow">WORKSPACES</div><h2>One app, three creative modes</h2></div></div>
+        <div class="module-grid">
+          <article class="module-card">
+            <div class="module-icon">▦</div><div><span class="module-kicker">PIXEL ART STUDIO</span><h3>Create Pixel Art</h3><p>Create precise pixel artwork using a customizable grid.</p></div>
+            <button class="text-btn" data-view="pixel">Open Studio →</button>
+          </article>
+          <article class="module-card">
+            <div class="module-icon">▶</div><div><span class="module-kicker">PIXEL ANIMATION</span><h3>Animate Your Pixels</h3><p>Create frame-by-frame animations using a grid editor and timeline.</p></div>
+            <button class="text-btn" data-view="animation">Open Animation →</button>
+          </article>
+          <article class="module-card">
+            <div class="module-icon">◇</div><div><span class="module-kicker">MINECRAFT SKIN CREATOR</span><h3>Design Your Skin</h3><p>Create a 64×64 skin with an interactive 3D character preview.</p></div>
+            <button class="text-btn" data-view="skin">Open Skin Creator →</button>
+          </article>
+        </div>
+      </div>
+
+      <div class="wrap section recent-section">
+        <div class="section-head"><div><div class="eyebrow">LOCAL STORAGE</div><h2>Recent Projects</h2></div><button class="secondary-btn small" id="clearRecent">Clear recent</button></div>
+        <div id="recentProjects" class="recent-grid"><div class="empty-state"><div class="empty-icon">□</div><strong>No projects yet</strong><span>Start creating your first project.</span></div></div>
+      </div>
+    </section>
+
+    <section id="view-pixel" class="view editor-view">
+      <div class="editor-shell">
+        <div class="editor-toolbar">
+          <div class="toolbar-group">
+            <button class="toolbar-btn active" data-tool="pencil" title="Pencil (B)">✎<span>Pencil</span></button>
+            <button class="toolbar-btn" data-tool="eraser" title="Eraser (E)">⌫<span>Eraser</span></button>
+            <button class="toolbar-btn" data-tool="fill" title="Fill (G)">▧<span>Fill</span></button>
+            <button class="toolbar-btn" data-tool="eyedropper" title="Eyedropper (I)">⌕<span>Pick</span></button>
+            <button class="toolbar-btn" data-tool="line" title="Line">╱<span>Line</span></button>
+            <button class="toolbar-btn" data-tool="rect" title="Rectangle">□<span>Rect</span></button>
+            <button class="toolbar-btn" data-tool="darken" title="Darken">◐<span>Darken</span></button>
+            <button class="toolbar-btn" data-tool="lighten" title="Lighten">◑<span>Lighten</span></button>
+            <button class="toolbar-btn" data-tool="clear" title="Clear">⌫<span>Clear</span></button>
+          </div>
+          <div class="toolbar-group color-group"><label class="color-swatch"><input id="pixelColor" type="color" value="#2563EB"><span id="colorChip"></span></label><button id="transparentBtn" class="toolbar-btn" title="Transparent color">∅<span>Transparent</span></button></div>
+          <div class="toolbar-group push-right"><button class="icon-btn" id="pixelUndo" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button><button class="icon-btn" id="pixelRedo" title="Redo (Ctrl+Y)" aria-label="Redo">↷</button><button class="icon-btn" id="pixelGrid" title="Toggle grid" aria-label="Toggle grid">▦</button><button class="icon-btn" id="pixelSettings" title="Canvas options" aria-label="Canvas options">☷</button></div>
+        </div>
+        <div class="editor-main">
+          <aside class="left-panel panel-card">
+            <div class="panel-title">Canvas</div>
+            <div class="form-row"><label>Size</label><select id="pixelSize"><option value="16">16 × 16</option><option value="32" selected>32 × 32</option><option value="64">64 × 64</option></select></div>
+            <button class="secondary-btn full" id="newPixelProject">New Canvas</button>
+            <div class="panel-title spaced">Project</div>
+            <input id="pixelProjectName" class="text-input" value="Untitled Pixel Art" aria-label="Project name">
+            <div class="button-stack"><button class="secondary-btn full save-project-btn" id="savePixel"><span class="btn-icon">↧</span><span>Save .HTD</span></button><button class="secondary-btn full" id="openPixel">Open .htd</button><button class="secondary-btn full" id="exportPixel">Export PNG</button></div>
+            <div class="panel-title spaced">Symmetry</div>
+            <div class="segmented"><button data-sym="none" class="active">None</button><button data-sym="h">H</button><button data-sym="v">V</button><button data-sym="both">Both</button></div>
+            <div class="panel-title spaced">Display</div>
+            <label class="check-row"><input id="showGrid" type="checkbox" checked> Show grid</label>
+            <label class="check-row"><input id="checkerBg" type="checkbox" checked> Checkerboard</label>
+            <label class="check-row"><input id="outlinePixels" type="checkbox" checked> Pixel outlines</label>
+            <div class="zoom-row"><button id="zoomOut" class="icon-btn">−</button><span id="zoomLabel">400%</span><button id="zoomIn" class="icon-btn">+</button><button id="zoomFit" class="secondary-btn small">Fit</button></div>
+            <div class="panel-hint">Tip: drag across cells for continuous strokes. Ctrl+Z/Y for history.</div>
+          </aside>
+          <div class="canvas-zone"><div class="canvas-status"><span id="pixelStatus">32 × 32</span><span class="status-dot">●</span><span id="toolStatus">Pencil</span></div><div id="pixelCanvasWrap" class="pixel-canvas-wrap"><canvas id="pixelCanvas"></canvas></div></div>
+          <aside class="right-panel panel-card">
+            <div class="panel-title">Palette</div>
+            <div id="paletteGrid" class="palette-grid"></div>
+            <div class="palette-add"><button class="secondary-btn full" id="addPaletteColor">+ Add current color</button></div>
+            <div class="panel-title spaced">Color</div>
+            <div class="mini-color"><span id="bigColorChip"></span><div><strong id="hexColor">#2563EB</strong><span>Active color</span></div></div>
+            <div class="panel-title spaced">Shortcuts</div>
+            <div class="shortcut-list"><span>B</span>Pencil<span>E</span>Eraser<span>G</span>Fill<span>I</span>Pick<span>Ctrl+S</span>Save</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-animation" class="view editor-view">
+      <div class="editor-shell animation-shell">
+        <div class="editor-toolbar">
+          <div class="toolbar-group">
+            <button class="toolbar-btn active" data-anim-tool="pencil">✎<span>Pencil</span></button><button class="toolbar-btn" data-anim-tool="eraser">⌫<span>Eraser</span></button><button class="toolbar-btn" data-anim-tool="fill">▧<span>Fill</span></button><button class="toolbar-btn" data-anim-tool="eyedropper">⌕<span>Pick</span></button><button class="toolbar-btn" data-anim-tool="line">╱<span>Line</span></button><button class="toolbar-btn" data-anim-tool="rect">□<span>Rect</span></button>
+          </div>
+          <div class="toolbar-group color-group"><label class="color-swatch"><input id="animColor" type="color" value="#2563EB"><span id="animColorChip"></span></label></div>
+          <div class="toolbar-group push-right"><button class="icon-btn" id="animUndo" title="Undo">↶</button><button class="icon-btn" id="animRedo" title="Redo">↷</button></div>
+        </div>
+        <div class="editor-main animation-main">
+          <aside class="left-panel panel-card">
+            <div class="panel-title">Animation</div>
+            <div class="form-row"><label>Canvas</label><select id="animSize"><option value="16">16 × 16</option><option value="32" selected>32 × 32</option><option value="64">64 × 64</option></select></div>
+            <div class="form-row"><label>FPS</label><input id="animFps" type="range" min="1" max="30" value="8"><output id="fpsOut">8 FPS</output></div>
+            <button id="newAnimation" class="secondary-btn full">New Animation</button>
+            <div class="panel-title spaced">Playback</div>
+            <div class="playback-row"><button id="playAnim" class="primary-btn small">▶ Play</button><button id="pauseAnim" class="secondary-btn small">Ⅱ Pause</button><button id="stopAnim" class="secondary-btn small">■ Stop</button></div>
+            <label class="check-row"><input id="loopAnim" type="checkbox" checked> Loop</label><label class="check-row"><input id="onionAnim" type="checkbox"> Onion skin</label>
+            <div class="panel-title spaced">Export</div>
+            <button id="exportGif" class="secondary-btn full action-btn"><span>GIF</span><span>Export GIF</span></button><button id="exportSprite" class="secondary-btn full action-btn"><span>▦</span><span>Export Sprite Sheet</span></button>
+            <div class="panel-title spaced">Project</div>
+            <input id="animProjectName" class="text-input" value="Walk Animation"><button id="saveAnimation" class="secondary-btn full save-project-btn"><span class="btn-icon">↧</span><span>Save .HTD</span></button><button id="openAnimation" class="secondary-btn full">Open .htd</button>
+          </aside>
+          <div class="canvas-zone"><div class="canvas-status"><span id="animStatus">Frame 1 / 1 · 32 × 32</span><span class="status-dot">●</span><span id="animToolStatus">Pencil</span></div><div class="pixel-canvas-wrap" id="animCanvasWrap"><canvas id="animCanvas"></canvas></div></div>
+          <aside class="right-panel panel-card properties-panel"><div class="panel-title">Frame</div><div class="frame-stat"><strong id="frameNumber">01</strong><span>Current frame</span></div><button id="dupFrame" class="secondary-btn full">Duplicate</button><button id="clearFrame" class="secondary-btn full">Clear Frame</button><button id="deleteFrame" class="danger-btn full">Delete Frame</button><div class="panel-title spaced">Timeline</div><div class="timeline-sidebar"><div id="timelineMini"></div></div><div class="panel-hint">Every frame owns independent pixel data.</div></aside>
+        </div>
+        <div class="timeline"><div class="timeline-label">TIMELINE</div><div id="timelineFrames" class="timeline-frames"></div><button id="addFrame" class="timeline-add" title="Add frame">+</button></div>
+      </div>
+    </section>
+
+    <section id="view-skin" class="view editor-view">
+      <div class="editor-shell skin-shell">
+        <div class="editor-toolbar">
+          <div class="toolbar-group"><button class="toolbar-btn active" data-skin-tool="pencil">✎<span>Pencil</span></button><button class="toolbar-btn" data-skin-tool="eraser">⌫<span>Eraser</span></button><button class="toolbar-btn" data-skin-tool="fill">▧<span>Fill</span></button><button class="toolbar-btn" data-skin-tool="eyedropper">⌕<span>Pick</span></button><button class="toolbar-btn" data-skin-tool="line">╱<span>Line</span></button><button class="toolbar-btn" data-skin-tool="rect">□<span>Rect</span></button></div>
+          <div class="toolbar-group color-group"><label class="color-swatch"><input id="skinColor" type="color" value="#E1A46F"><span id="skinColorChip"></span></label></div>
+          <div class="toolbar-group push-right"><button class="icon-btn" id="skinUndo" title="Undo">↶</button><button class="icon-btn" id="skinRedo" title="Redo">↷</button><button class="icon-btn" id="skinGrid" title="Toggle grid">▦</button></div>
+        </div>
+        <div class="editor-main skin-main">
+          <aside class="left-panel panel-card"><div class="panel-title">Skin Texture</div><div class="skin-size-badge">64 × 64 PNG</div><button id="importSkin" class="secondary-btn full">Import Skin PNG</button><button id="exportSkin" class="primary-btn full action-btn"><span>PNG</span><span>Export Skin PNG</span></button><div class="panel-title spaced">Project</div><input id="skinProjectName" class="text-input" value="My Minecraft Skin"><button id="saveSkin" class="secondary-btn full save-project-btn"><span class="btn-icon">↧</span><span>Save .HTD</span></button><button id="openSkin" class="secondary-btn full">Open .htd</button><div class="panel-title spaced">Symmetry</div><div class="segmented skin-sym"><button data-skin-sym="none" class="active">None</button><button data-skin-sym="h">H</button><button data-skin-sym="v">V</button><button data-skin-sym="both">Both</button></div><div class="panel-title spaced">Guide</div><label class="check-row"><input id="skinGridToggle" type="checkbox" checked> Show guides</label><div class="skin-legend"><span><i class="legend-head"></i>Head</span><span><i class="legend-body"></i>Body</span><span><i class="legend-limb"></i>Limbs</span><span><i class="legend-overlay"></i>Overlay</span></div></aside>
+          <div class="canvas-zone skin-canvas-zone"><div class="canvas-status"><span>64 × 64 Minecraft texture</span><span class="status-dot">●</span><span id="skinToolStatus">Pencil</span></div><div class="pixel-canvas-wrap" id="skinCanvasWrap"><canvas id="skinCanvas"></canvas></div></div>
+          <aside class="right-panel panel-card skin-preview-panel"><div class="panel-title">3D Character Preview</div><div id="skin3dWrap" class="skin3d-wrap"><canvas id="skin3d"></canvas><div class="preview-help">Drag to rotate · Wheel to zoom</div></div><div class="view-buttons"><button id="frontSkin" class="secondary-btn small">Front</button><button id="backSkin" class="secondary-btn small">Back</button><button id="resetSkin" class="secondary-btn small">Reset</button></div><div class="panel-title spaced">Palette</div><div id="skinPalette" class="palette-grid"></div><button id="addSkinPalette" class="secondary-btn full">+ Add current color</button></aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-settings" class="view settings-view"><div class="settings-card panel-card"><div class="eyebrow">PREFERENCES</div><h2>Settings</h2><p class="muted">Preferences are saved locally on this device.</p><div class="settings-section"><h3>Appearance</h3><div class="theme-options"><button data-theme="light">Light</button><button data-theme="dark">Dark</button><button data-theme="system">System</button></div></div><div class="settings-section"><h3>Editor</h3><label class="check-row"><input id="setGrid" type="checkbox" checked> Show grid by default</label><label class="check-row"><input id="setOutline" type="checkbox" checked> Pixel outlines</label><label class="check-row"><input id="setOnion" type="checkbox"> Onion skin</label></div><div class="settings-section"><h3>Storage</h3><button id="clearLocalData" class="danger-btn">Clear local data</button></div><div class="settings-note">PixelForge is local-first. Core editing, importing, exporting and project files do not require accounts or API keys.</div></div></section>
+  </main>
+
+  <input type="file" id="fileOpen" accept=".htd,application/json" hidden>
+  <input type="file" id="pngOpen" accept="image/png" hidden>
+  <input type="file" id="skinOpen" accept="image/png" hidden>
+  <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+
+  <div id="newProjectModal" class="modal-backdrop hidden"><div class="modal"><div class="modal-head"><h3>New Pixel Project</h3><button class="icon-btn" data-close-modal="newProjectModal">×</button></div><div class="form-row"><label>Name</label><input id="modalProjectName" class="text-input" value="Untitled Pixel Art"></div><div class="form-row"><label>Size</label><select id="modalProjectSize"><option value="16">16 × 16</option><option value="32" selected>32 × 32</option><option value="64">64 × 64</option></select></div><div class="modal-actions"><button class="secondary-btn" data-close-modal="newProjectModal">Cancel</button><button class="primary-btn" id="modalCreate">Create</button></div></div></div>
+
+  <script src="js/core/pixel-engine.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/export.js"></script>
+  <script src="js/core/gif-encoder.js"></script>
+  <script src="js/three/character.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
